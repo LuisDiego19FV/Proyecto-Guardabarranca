@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
 	// The force which is added when the player jumps
 	// This can be changed in the Inspector window
-	public Vector2 jumpForce = new Vector2(0, 300);
+	public Vector3 jumpForce = new Vector3(0, 300, 0);
 
 	// Update is called once per frame
 	void Update()
@@ -14,8 +14,8 @@ public class Player : MonoBehaviour
 		// Jump
 		if (Input.GetKeyUp("space"))
 		{
-			GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-			GetComponent<Rigidbody2D>().AddForce(jumpForce);
+			GetComponent<Rigidbody>().velocity = Vector3.zero;
+			GetComponent<Rigidbody>().AddForce(jumpForce);
 		}
 
 		// Die by being off screen
@@ -37,4 +37,9 @@ public class Player : MonoBehaviour
 	{
 		Application.LoadLevel(Application.loadedLevel);
 	}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Die();
+    }
 }

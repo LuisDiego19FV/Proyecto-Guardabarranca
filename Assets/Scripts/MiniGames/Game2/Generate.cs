@@ -14,6 +14,7 @@ public class Generate : MonoBehaviour
 
 	void CreateObstacle()
 	{
-		Instantiate(tree);
+		GameObject go = Instantiate(tree);
+        go.SetActive(true);
 	}
 }
