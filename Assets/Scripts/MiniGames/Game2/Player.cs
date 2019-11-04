@@ -14,8 +14,7 @@ public class Player : MonoBehaviour
 		// Jump
 		if (Input.GetKeyUp("space"))
 		{
-			GetComponent<Rigidbody>().velocity = Vector3.zero;
-			GetComponent<Rigidbody>().AddForce(jumpForce);
+            jump();
 		}
 
 		// Die by being off screen
@@ -26,10 +25,15 @@ public class Player : MonoBehaviour
 		}
 	}
 
+    public void jump()
+    {
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        GetComponent<Rigidbody>().AddForce(jumpForce);
+    }
+
 	// Die by collision
 	void OnCollisionEnter(Collision other)
 	{
-		Debug.Log("kkkk");
 		Die();
 	}
 
