@@ -11,16 +11,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels.unity
     guid: 110041af5d79f9840b642102f7bda126
+  - enabled: 1
+    path: Assets/Scenes/Finca.unity
+    guid: af45a9207a1ca50458d6cb13c6d11cf2
+  - enabled: 1
+    path: Assets/Scenes/MiniJuegos/Flappy.unity
+    guid: 89bec81c6fd97e64ca27cd5a18b2577e
+  - enabled: 0
+    path: Assets/Scenes/Game2Instructions.unity
+    guid: 0c1869a89e604674397e55866889768b
   - enabled: 0
     path: Assets/Scenes/Forest.unity
     guid: 3a52cd910bd2ef24aab2bf4ca39eaa66
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Nivel1.unity
     guid: 9ab2f8233caf87246a71c9203f998d16
-  - enabled: 1
-    path: Assets/Scenes/Game2Instructions.unity
-    guid: 0c1869a89e604674397e55866889768b
   m_configObjects: {}

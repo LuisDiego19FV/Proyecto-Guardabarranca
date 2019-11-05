@@ -1,21 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
 	// The force which is added when the player jumps
 	// This can be changed in the Inspector window
 	public Vector3 jumpForce = new Vector3(0, 300, 0);
+    public GameObject panel;
 
-	// Update is called once per frame
-	void Update()
+    private void Start()
+    {
+        PlayerPrefs.SetInt("MiniGame1", 0);
+    }
+
+    // Update is called once per frame
+    void Update()
 	{
 		// Jump
 		if (Input.GetKeyUp("space"))
 		{
-			GetComponent<Rigidbody>().velocity = Vector3.zero;
-			GetComponent<Rigidbody>().AddForce(jumpForce);
+            jump();
 		}
 
 		// Die by being off screen
@@ -26,17 +32,31 @@ public class Player : MonoBehaviour
 		}
 	}
 
+    public void jump()
+    {
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        GetComponent<Rigidbody>().AddForce(jumpForce);
+    }
+
 	// Die by collision
 	void OnCollisionEnter(Collision other)
 	{
-		Debug.Log("kkkk");
-		Die();
+        gameObject.SetActive(false);
+        panel.SetActive(true);
+        Time.timeScale = 0;
 	}
 
-	void Die()
+	public void Die()
 	{
-		Application.LoadLevel(Application.loadedLevel);
+        Time.timeScale = 1;
+        Application.LoadLevel(Application.loadedLevel);
 	}
+
+    public void toMenu()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
+    }
 
     private void OnTriggerEnter(Collider other)
     {

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MiniGamesManager : MonoBehaviour
 {
@@ -87,6 +88,11 @@ public class MiniGamesManager : MonoBehaviour
     private void OnCollisionEnter (Collision col)
     {
         GameObject other = col.gameObject;
+
+        if (other.tag.Equals("Flag"))
+        {
+            SceneManager.LoadScene(0);
+        }
            
         // condicion que el tag sea "Minigame"
         if (other.tag.Equals("MiniGame"))
