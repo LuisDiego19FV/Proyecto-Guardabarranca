@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
 		// Jump
 		if (Input.GetKeyUp("space"))
 		{
-            if (screenPosition.y > Screen.height-1000)
+            if (screenPosition.y <= Screen.height-1000)
             {
               jump();  
             }
