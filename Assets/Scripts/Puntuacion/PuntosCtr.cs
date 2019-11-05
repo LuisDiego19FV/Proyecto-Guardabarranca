@@ -5,6 +5,7 @@ using TMPro;
 
 public class PuntosCtr : MonoBehaviour
 {
+    //status: ok
     // Objetos privados
     public TextMeshProUGUI name;
     public TextMeshProUGUI level;
