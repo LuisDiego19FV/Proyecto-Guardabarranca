@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class LevelSelection : MonoBehaviour
 {
+    //status: ok
+    
     private Animator ani;
 
     // Start is called before the first frame update
