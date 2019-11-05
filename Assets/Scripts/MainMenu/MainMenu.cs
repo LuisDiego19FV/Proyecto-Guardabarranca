@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    //status: ok
     /* PlayGame()
      * Se llama por medio de un boton para cambiar
      * a la escena 1.
