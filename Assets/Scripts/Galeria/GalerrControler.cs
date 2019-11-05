@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GalerrControler : MonoBehaviour
 {
+    //status: ok
     // Start is called before the first frame update
     void Start()
     {
