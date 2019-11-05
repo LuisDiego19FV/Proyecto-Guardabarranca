@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
 	// This can be changed in the Inspector window
 	public Vector3 jumpForce = new Vector3(0, 300, 0);
     public GameObject panel;
+    public float maximo;
 
     private void Start()
     {
@@ -18,14 +19,20 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
 	{
+        Vector2 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
+
 		// Jump
 		if (Input.GetKeyUp("space"))
 		{
-            jump();
+            if (screenPosition.y > Screen.height-1000)
+            {
+              jump();  
+            }
+            
 		}
 
 		// Die by being off screen
-		Vector2 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
+		
 		if (screenPosition.y > Screen.height || screenPosition.y < 0)
 		{
 			Die();
