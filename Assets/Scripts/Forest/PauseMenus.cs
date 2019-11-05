@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenus : MonoBehaviour
 {
+    //status: ok
     // variables publicas
     public GameObject canvas1;
     public GameObject panel1;
