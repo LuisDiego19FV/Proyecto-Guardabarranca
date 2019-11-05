@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    //status: ok
     // variables publicas
     public GameObject player;
     public GameObject canvas1;
