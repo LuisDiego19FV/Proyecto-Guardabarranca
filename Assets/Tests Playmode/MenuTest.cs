@@ -26,15 +26,15 @@ namespace Tests
 			start_button = GameObject.Find("btn_start").GetComponent<Button>();
 			start_button.onClick.Invoke();
 
-			yield return new WaitForSeconds(4);
+			yield return new WaitForSeconds(0.5f);
 
 			String new_scene = SceneManager.GetActiveScene().name;
 
-			yield return new WaitForSeconds(4);
+			yield return new WaitForSeconds(0.5f);
 
 			Debug.Log(SceneManager.GetActiveScene().name);
 
-			Assert.True(new_scene == "Forest");
+			Assert.True(new_scene == "Levels");
 		}
 	}
 }

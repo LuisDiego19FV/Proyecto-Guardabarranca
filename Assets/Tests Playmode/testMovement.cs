@@ -21,7 +21,7 @@ namespace Tests
         public IEnumerator movement_testWithEnumeratorPasses()
         {
 
-            SceneManager.LoadScene("Forest");
+            SceneManager.LoadScene("Finca");
 
             yield return new WaitForSeconds(4);
 
@@ -39,6 +39,8 @@ namespace Tests
             //Move player using joystick handle
             handle.transform.position = new Vector3(100, handle.transform.position.y, handle.transform.position.z);
 
+            yield return new WaitForSeconds(0.5f);
+
             Quaternion player_new_rotation = player.transform.rotation;
 
             yield return null;
@@ -46,7 +48,7 @@ namespace Tests
 
             // Use the Assert class to test conditions.
             // Use yield to skip a frame.
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
 
             Assert.False(player_original_rotation == player_new_rotation);
         }
